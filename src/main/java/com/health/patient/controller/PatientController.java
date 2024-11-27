@@ -47,11 +47,18 @@ public class PatientController {
 		
 		return pRep.findById(cin);
 	}
-	
+	@Operation(summary="Rechercher un patient", description="Rechercher un patient par sexe")
 	@GetMapping("/patient/searchBySexe/{sexe}")
 	public List<Patient> recherchePatientParSexe(@PathVariable String sexe){
 		
 		return pRep.findBySexe(sexe);
+	}
+	
+	@Operation(summary="Rechercher un patient par tranche d'age", description="Rechercher un patient par tranche d'age")
+	@GetMapping("/patient/searchByAgeRange/{min}/{max}")
+	public List<Patient> recherchePatientParTrancheDage(@PathVariable int min,@PathVariable int max){
+		
+		return pRep.findByAgeBetween(min,max);
 	}
 	
 	

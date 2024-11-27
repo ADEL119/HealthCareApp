@@ -10,6 +10,7 @@ import com.health.patient.model.Patient;
 public interface PatientRepository extends JpaRepository<Patient,Integer> {
 	
 	public List<Patient> findBySexe(String sexe);
+	public List<Patient> findByAgeBetween(int min,int max);
 	
 
 }
