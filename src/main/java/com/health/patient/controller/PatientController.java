@@ -42,11 +42,19 @@ public class PatientController {
 	}
 	
 	@Operation(summary="Rechercher un patient", description="Rechercher un patient par cin ")
-	@GetMapping("/patient/{cin}")
+	@GetMapping("/patient/searchByCin/{cin}")
 	public Optional<Patient> recherchePatientParId(@PathVariable int cin){
 		
 		return pRep.findById(cin);
 	}
+	
+	@GetMapping("/patient/searchBySexe/{sexe}")
+	public List<Patient> recherchePatientParSexe(@PathVariable String sexe){
+		
+		return pRep.findBySexe(sexe);
+	}
+	
+	
 	
 	
 	@Operation(summary="Supprimer un patient", description="Supprimer un patient par cin")
