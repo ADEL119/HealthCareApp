@@ -1,4 +1,4 @@
-package com.health.patient.controller;
+package com.health.controllers;
 
 
 import java.util.List;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.health.patient.model.Patient;
+import com.health.models.Patient;
 import com.health.patient.repository.PatientRepository;
 
 import io.swagger.v3.oas.annotations.Operation;

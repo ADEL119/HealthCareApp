@@ -1,4 +1,7 @@
-package com.health.patient.model;
+package com.health.models;
+
+
+import java.util.List;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -22,14 +25,30 @@ public class Medecin {
 	@NotBlank(message = "La valeur adresse ne peut pas être vide")
 	private String adresse;
 	private int numeroTel;
+	private String service;
+	private List<Patient> patientsSuivis;
 	public Medecin(int idMedecin, @NotBlank(message = "La valeur nom ne peut pas être vide") String nom,
 			@NotBlank(message = "La valeur specialite ne peut pas être vide") String spécialité,
-			@NotBlank(message = "La valeur adresse ne peut pas être vide") String adresse, int numeroTel) {
+			@NotBlank(message = "La valeur adresse ne peut pas être vide") String adresse, int numeroTel,List<Patient> patientsSuivis,String service) {
 		this.idMedecin = idMedecin;
 		this.nom = nom;
 		this.spécialité = spécialité;
 		this.adresse = adresse;
 		this.numeroTel = numeroTel;
+		this.patientsSuivis=patientsSuivis;
+		this.service=service;
+	}
+	public String getService() {
+		return service;
+	}
+	public void setService(String service) {
+		this.service = service;
+	}
+	public List<Patient> getPatientsSuivis() {
+		return patientsSuivis;
+	}
+	public void setPatientsSuivis(List<Patient> patientsSuivis) {
+		this.patientsSuivis = patientsSuivis;
 	}
 	public int getIdMedecin() {
 		return idMedecin;

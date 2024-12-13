@@ -1,4 +1,4 @@
-package com.health.patient.model;
+package com.health.models;
 
 import java.util.Date;
 
